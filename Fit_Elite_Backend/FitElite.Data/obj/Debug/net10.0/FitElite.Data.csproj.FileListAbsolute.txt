@@ -1,0 +1,15 @@
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\bin\Debug\net10.0\FitElite.Data.deps.json
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\bin\Debug\net10.0\FitElite.Data.runtimeconfig.json
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\bin\Debug\net10.0\FitElite.Data.dll
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\bin\Debug\net10.0\FitElite.Data.pdb
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\FitElite.Data.csproj.AssemblyReference.cache
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\FitElite.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\FitElite.Data.AssemblyInfoInputs.cache
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\FitElite.Data.AssemblyInfo.cs
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\FitElite.Data.csproj.CoreCompileInputs.cache
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\FitElite.Data.sourcelink.json
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\FitElite.Data.dll
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\refint\FitElite.Data.dll
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\FitElite.Data.pdb
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\FitElite.Data.genruntimeconfig.cache
+C:\Users\parve\Desktop\Fit_Elite\Fit_Elite_Backend\FitElite.Data\obj\Debug\net10.0\ref\FitElite.Data.dll

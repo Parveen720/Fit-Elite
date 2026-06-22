@@ -1,0 +1,233 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{07D80C04-5E95-947C-377D-5917E9794080}|FitElite.Services\\FitElite.Services.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.services\\implementations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D80C04-5E95-947C-377D-5917E9794080}|FitElite.Services\\FitElite.Services.csproj|solutionrelative:fitelite.services\\implementations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697C84F-49B2-2AA4-6C14-F50E5C1D9EEF}|FitElite.Data\\FitElite.Data.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.data\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A697C84F-49B2-2AA4-6C14-F50E5C1D9EEF}|FitElite.Data\\FitElite.Data.csproj|solutionrelative:fitelite.data\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF626302-2AD0-DDC2-A16B-F86BC586B727}|FitElite.DTOs\\FitElite.DTOs.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.dtos\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF626302-2AD0-DDC2-A16B-F86BC586B727}|FitElite.DTOs\\FitElite.DTOs.csproj|solutionrelative:fitelite.dtos\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D80C04-5E95-947C-377D-5917E9794080}|FitElite.Services\\FitElite.Services.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D80C04-5E95-947C-377D-5917E9794080}|FitElite.Services\\FitElite.Services.csproj|solutionrelative:fitelite.services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D80C04-5E95-947C-377D-5917E9794080}|FitElite.Services\\FitElite.Services.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D80C04-5E95-947C-377D-5917E9794080}|FitElite.Services\\FitElite.Services.csproj|solutionrelative:fitelite.services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0673C09A-F650-C8B2-3407-2A5F0E8E0F84}|FitElite.Controllers\\FitElite.Controllers.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.controllers\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0673C09A-F650-C8B2-3407-2A5F0E8E0F84}|FitElite.Controllers\\FitElite.Controllers.csproj|solutionrelative:fitelite.controllers\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0673C09A-F650-C8B2-3407-2A5F0E8E0F84}|FitElite.Controllers\\FitElite.Controllers.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.controllers\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0673C09A-F650-C8B2-3407-2A5F0E8E0F84}|FitElite.Controllers\\FitElite.Controllers.csproj|solutionrelative:fitelite.controllers\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697C84F-49B2-2AA4-6C14-F50E5C1D9EEF}|FitElite.Data\\FitElite.Data.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.data\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A697C84F-49B2-2AA4-6C14-F50E5C1D9EEF}|FitElite.Data\\FitElite.Data.csproj|solutionrelative:fitelite.data\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07D80C04-5E95-947C-377D-5917E9794080}|FitElite.Services\\FitElite.Services.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07D80C04-5E95-947C-377D-5917E9794080}|FitElite.Services\\FitElite.Services.csproj|solutionrelative:fitelite.services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D7A469-D2D1-505F-359A-DA8A5FCA0497}|Fit_Elite_Backend\\FitElite.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fit_elite_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1D7A469-D2D1-505F-359A-DA8A5FCA0497}|Fit_Elite_Backend\\FitElite.csproj|solutionrelative:fit_elite_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697C84F-49B2-2AA4-6C14-F50E5C1D9EEF}|FitElite.Data\\FitElite.Data.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fitelite.data\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A697C84F-49B2-2AA4-6C14-F50E5C1D9EEF}|FitElite.Data\\FitElite.Data.csproj|solutionrelative:fitelite.data\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D7A469-D2D1-505F-359A-DA8A5FCA0497}|Fit_Elite_Backend\\FitElite.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fit_elite_backend\\fit_elite_backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{D1D7A469-D2D1-505F-359A-DA8A5FCA0497}|Fit_Elite_Backend\\FitElite.csproj|solutionrelative:fit_elite_backend\\fit_elite_backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D7A469-D2D1-505F-359A-DA8A5FCA0497}|Fit_Elite_Backend\\FitElite.csproj|c:\\users\\parve\\desktop\\fit_elite\\fit_elite_backend\\fit_elite_backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D1D7A469-D2D1-505F-359A-DA8A5FCA0497}|Fit_Elite_Backend\\FitElite.csproj|solutionrelative:fit_elite_backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\Dtos\\UserDto.cs",
+              "RelativeDocumentMoniker": "FitElite.DTOs\\Dtos\\UserDto.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\Dtos\\UserDto.cs",
+              "RelativeToolTip": "FitElite.DTOs\\Dtos\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T04:30:48.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "FitElite.Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "FitElite.Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T03:55:44.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "FitElite.Data\\Repositories\\IRepository.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\Repositories\\IRepository.cs",
+              "RelativeToolTip": "FitElite.Data\\Repositories\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T03:46:48.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\Implementations\\UserService.cs",
+              "RelativeDocumentMoniker": "FitElite.Services\\Implementations\\UserService.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\Implementations\\UserService.cs",
+              "RelativeToolTip": "FitElite.Services\\Implementations\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T20:05:47.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\Implementations\\AuthService.cs",
+              "RelativeDocumentMoniker": "FitElite.Services\\Implementations\\AuthService.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\Implementations\\AuthService.cs",
+              "RelativeToolTip": "FitElite.Services\\Implementations\\AuthService.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwEwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T20:04:50.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "FitElite.Data\\Repositories\\Repository.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\Repositories\\Repository.cs",
+              "RelativeToolTip": "FitElite.Data\\Repositories\\Repository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T20:03:52.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "FitElite.Controllers\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "FitElite.Controllers\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T19:52:53.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Fit_Elite_Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\Program.cs",
+              "RelativeToolTip": "Fit_Elite_Backend\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAswBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T18:38:18.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "FitElite.Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "FitElite.Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-17T03:46:59.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "FitElite.Controllers\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\Controllers\\UserController.cs",
+              "RelativeToolTip": "FitElite.Controllers\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T20:02:44.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\Models\\User.cs",
+              "RelativeDocumentMoniker": "FitElite.Data\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\Models\\User.cs",
+              "RelativeToolTip": "FitElite.Data\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T20:18:29.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Fit_Elite_Backend.http",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\Fit_Elite_Backend.http",
+              "RelativeDocumentMoniker": "Fit_Elite_Backend\\Fit_Elite_Backend.http",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\Fit_Elite_Backend.http",
+              "RelativeToolTip": "Fit_Elite_Backend\\Fit_Elite_Backend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-06-17T06:59:54.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Fit_Elite_Backend\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Fit_Elite_Backend\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-17T03:41:11.74Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
