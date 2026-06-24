@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitElite.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+094c1b584ef5b65f46c67ae1ff1451a6e1dbe8ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf44479eee7e04beb3162135217d2fb237b4243e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitElite.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitElite.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

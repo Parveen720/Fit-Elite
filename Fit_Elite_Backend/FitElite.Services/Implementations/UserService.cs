@@ -7,9 +7,9 @@ namespace FitElite.Services.Implementations
 {
     public class UserService : IUserService
     {
-        private readonly IRepository<User> _userRepository;
+        private readonly IRepository<Users> _userRepository;
 
-        public UserService(IRepository<User> userRepository)
+        public UserService(IRepository<Users> userRepository)
         {
             _userRepository = userRepository;
         }
@@ -45,7 +45,7 @@ namespace FitElite.Services.Implementations
 
         public async Task<UserDto> AddUserAsync(UserDto userDto)
         {
-            var user = new User
+            var user = new Users
             {
                 Name = userDto.Name,
                 Email = userDto.Email.Trim().ToLowerInvariant(),

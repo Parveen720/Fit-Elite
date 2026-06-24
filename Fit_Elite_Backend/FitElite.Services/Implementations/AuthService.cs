@@ -14,11 +14,11 @@ namespace FitElite.Services.Implementations
 {
     public class AuthService : IAuthService
     {
-        private readonly IRepository<User> _userRepository;
+        private readonly IRepository<Users> _userRepository;
         private readonly IConfiguration _configuration;
 
         public AuthService(
-            IRepository<User> userRepository,
+            IRepository<Users> userRepository,
             IConfiguration configuration)
         {
             _userRepository = userRepository;
@@ -37,9 +37,9 @@ namespace FitElite.Services.Implementations
             if (existingUser != null)
                 return false;
 
-            var hasher = new PasswordHasher<User>();
+            var hasher = new PasswordHasher<Users>();
 
-            var user = new User
+            var user = new Users
             {
                 Name = dto.Name,
                 Email = dto.Email,
@@ -66,7 +66,7 @@ namespace FitElite.Services.Implementations
             if (user == null)
                 throw new Exception("Invalid email or password");
 
-            var hasher = new PasswordHasher<User>();
+            var hasher = new PasswordHasher<Users>();
 
             var result = hasher.VerifyHashedPassword(
                 user,
