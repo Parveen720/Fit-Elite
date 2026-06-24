@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\FitElite.csproj": {}
+    "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\FitElite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj": {
+    "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj",
         "projectName": "FitElite.Controllers",
-        "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj",
-        "packagesPath": "C:\\Users\\parve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Controllers\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\parve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,11 +33,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj": {
-                "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj"
+              "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj"
               },
-              "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj": {
-                "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj"
+              "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj"
               }
             }
           }
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -495,20 +495,20 @@
         }
       }
     },
-    "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj": {
+    "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj",
         "projectName": "FitElite.Data",
-        "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj",
-        "packagesPath": "C:\\Users\\parve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\parve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -576,7 +576,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -854,20 +854,20 @@
         }
       }
     },
-    "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj": {
+    "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj",
         "projectName": "FitElite.DTOs",
-        "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj",
-        "packagesPath": "C:\\Users\\parve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\parve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -917,7 +917,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1195,20 +1195,20 @@
         }
       }
     },
-    "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj": {
+    "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj",
         "projectName": "FitElite.Services",
-        "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj",
-        "packagesPath": "C:\\Users\\parve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\parve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1224,11 +1224,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj": {
-                "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj"
+              "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj"
               },
-              "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj": {
-                "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj"
+              "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj"
               }
             }
           }
@@ -1275,7 +1275,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1553,20 +1553,20 @@
         }
       }
     },
-    "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\FitElite.csproj": {
+    "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\FitElite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\FitElite.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\FitElite.csproj",
         "projectName": "FitElite",
-        "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\FitElite.csproj",
-        "packagesPath": "C:\\Users\\parve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\FitElite.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\Fit_Elite_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\parve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1582,17 +1582,17 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj": {
-                "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj"
+              "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Controllers\\FitElite.Controllers.csproj"
               },
-              "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj": {
-                "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj"
+              "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Data\\FitElite.Data.csproj"
               },
-              "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj": {
-                "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj"
+              "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.DTOs\\FitElite.DTOs.csproj"
               },
-              "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj": {
-                "projectPath": "C:\\Users\\parve\\Desktop\\Fit_Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj"
+              "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\Fit-Elite\\Fit_Elite_Backend\\FitElite.Services\\FitElite.Services.csproj"
               }
             }
           }
@@ -1654,7 +1654,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
