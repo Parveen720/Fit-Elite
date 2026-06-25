@@ -1,19 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FitElite.Data.Models
 {
-    public class User
+    public class User : BaseEntity
     {
-        public int Id { get; set; }
+        [Key]
+        public long Id { get; set; }
 
-        public string Name { get; set; } = string.Empty;
+        [Required]
+        [StringLength(100)]
+        public string FullName { get; set; } = string.Empty;
 
+        [Required]
+        [EmailAddress]
+        [StringLength(100)]
         public string Email { get; set; } = string.Empty;
 
-        public string Phone { get; set; } = string.Empty;
+        [StringLength(15)]
+        public string? PhoneNumber { get; set; }
 
-        public string Password { get; set; } = string.Empty;
+        [Required]
+        [StringLength(255)]
+        public string PasswordHash { get; set; } = string.Empty;
+
+       
+        [ForeignKey(nameof(Role))]
+        public long RoleId { get; set; }
+        public Role Role { get; set; } = null!;
+
+        public bool IsActive { get; set; } = true;
+
+       
+        public ICollection<MemberSubscription> Subscriptions { get; set; } = new List<MemberSubscription>();
     }
-} 
+}
