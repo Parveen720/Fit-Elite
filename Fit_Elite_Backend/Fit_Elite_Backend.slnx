@@ -1,7 +1,0 @@
-<Solution>
-  <Project Path="FitElite.Controllers/FitElite.Controllers.csproj" />
-  <Project Path="FitElite.Data/FitElite.Data.csproj" />
-  <Project Path="FitElite.DTOs/FitElite.DTOs.csproj" />
-  <Project Path="FitElite.Services/FitElite.Services.csproj" />
-  <Project Path="Fit_Elite_Backend/FitElite.csproj" />
-</Solution>

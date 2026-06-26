@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Fit_Elite.API/Fit_Elite.API.csproj" />
+  <Project Path="Fit_Elite.Application/Fit_Elite.Application.csproj" />
+  <Project Path="Fit_Elite.Domain/Fit_Elite.Domain.csproj" />
+  <Project Path="Fit_Elite.Infrastructure/Fit_Elite.Infrastructure.csproj" />
+</Solution>

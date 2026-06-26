@@ -1,0 +1,29 @@
+## Visual Studio Tooling & Cache
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build Outputs (Compiled binaries)
+**/[Bb]in/
+**/[Oo]bj/
+[Bb]in/
+[Oo]bj/
+
+## IDE - Rider / VS Code
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.targets
+
+## OS Generated Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## .NET Core / ASP.NET Core Secrets & Local Settings
+appsettings.Development.json
+UserSecrets/
