@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Fit_Elite.Application.DTOs;
 
 namespace Fit_Elite.Application.Interfaces
 {
-    internal class IAuthService
+    public interface IAuthService
     {
+        Task<AuthResponseDto> RegisterAsync(RegisterRequestDto registerDto);
+        Task<AuthResponseDto> LoginAsync(LoginRequestDto loginDto);
     }
 }

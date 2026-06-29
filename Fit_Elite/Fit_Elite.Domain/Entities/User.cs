@@ -1,12 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Fit_Elite.Domain.Entities
 {
     public class User : BaseEntity
     {
-        [Key]
-        public long Id { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -24,14 +21,10 @@ namespace Fit_Elite.Domain.Entities
         [StringLength(255)]
         public string PasswordHash { get; set; } = string.Empty;
 
-       
-        [ForeignKey(nameof(Role))]
         public long RoleId { get; set; }
+
         public Role Role { get; set; } = null!;
 
         public bool IsActive { get; set; } = true;
-
-       
-        public ICollection<MemberSubscription> Subscriptions { get; set; } = new List<MemberSubscription>();
     }
 }

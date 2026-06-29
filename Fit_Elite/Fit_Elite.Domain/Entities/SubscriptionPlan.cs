@@ -5,10 +5,6 @@ namespace Fit_Elite.Domain.Entities
 {
     public class SubscriptionPlan : BaseEntity
     {
-        [Key]
-        public long Id { get; set; }
-
-        [ForeignKey(nameof(Gym))]
         public long GymId { get; set; }
 
         public Gym Gym { get; set; } = null!;
@@ -27,9 +23,5 @@ namespace Fit_Elite.Domain.Entities
 
         public bool IsActive { get; set; } = true;
 
-        // Navigation Properties
-       
-        public ICollection<MemberSubscription> MemberSubscriptions { get; set; }
-            = new List<MemberSubscription>();
     }
 }

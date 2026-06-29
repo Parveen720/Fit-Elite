@@ -1,13 +1,9 @@
-﻿
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Fit_Elite.Domain.Entities
 {
     public class Gym : BaseEntity
     {
-        [Key]
-        public long Id { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -41,14 +37,6 @@ namespace Fit_Elite.Domain.Entities
 
         public long GymOwnerId { get; set; }
 
-        [ForeignKey(nameof(GymOwnerId))]
-        public User GymOwner { get; set; } = null!;
-
-        
-
-        public ICollection<SubscriptionPlan> SubscriptionPlans { get; set; }
-            = new List<SubscriptionPlan>();
-
-       
+        public User GymOwner { get; set; } = null!;       
     }
 }

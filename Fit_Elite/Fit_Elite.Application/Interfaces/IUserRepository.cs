@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Fit_Elite.Domain.Entities;
 
 namespace Fit_Elite.Application.Interfaces
 {
-    internal class IUserRepository
+    public interface IUserRepository
     {
+        Task<User?> GetByEmailAsync(string email);
+        Task<User?> GetByIdAsync(long id);
+        Task AddAsync(User user);
+        Task<bool> EmailExistsAsync(string email);
+        Task<Role?> GetRoleByNameAsync(string roleName);
+        Task SaveChangesAsync();
     }
 }

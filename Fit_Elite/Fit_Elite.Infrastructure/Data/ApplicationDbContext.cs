@@ -1,7 +1,6 @@
 ﻿using Fit_Elite.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace Fit_Elite.Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext
@@ -11,72 +10,152 @@ namespace Fit_Elite.Infrastructure.Data
         {
         }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<Gym> Gyms { get; set; }
-        public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
-        public DbSet<MemberSubscription> MemberSubscriptions { get; set; }
-        public DbSet<Payment> Payments { get; set; }
+        #region DbSets
+
+        public DbSet<User> Users => Set<User>();
+        public DbSet<Role> Roles => Set<Role>();
+        public DbSet<Gym> Gyms => Set<Gym>();
+        public DbSet<SubscriptionPlan> SubscriptionPlans => Set<SubscriptionPlan>();
+        public DbSet<MemberSubscription> MemberSubscriptions => Set<MemberSubscription>();
+        public DbSet<Payment> Payments => Set<Payment>();
+
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            
-            modelBuilder.Entity<User>().HasQueryFilter(u => !u.IsDeleted);
-            modelBuilder.Entity<Role>().HasQueryFilter(r => !r.IsDeleted);
-            modelBuilder.Entity<Gym>().HasQueryFilter(g => !g.IsDeleted);
-            modelBuilder.Entity<SubscriptionPlan>().HasQueryFilter(sp => !sp.IsDeleted);
-            modelBuilder.Entity<MemberSubscription>().HasQueryFilter(ms => !ms.IsDeleted);
-            modelBuilder.Entity<Payment>().HasQueryFilter(p => !p.IsDeleted);
+            #region Global Query Filters
+
+            modelBuilder.Entity<User>().HasQueryFilter(x => !x.IsDeleted);
+            modelBuilder.Entity<Role>().HasQueryFilter(x => !x.IsDeleted);
+            modelBuilder.Entity<Gym>().HasQueryFilter(x => !x.IsDeleted);
+            modelBuilder.Entity<SubscriptionPlan>().HasQueryFilter(x => !x.IsDeleted);
+            modelBuilder.Entity<MemberSubscription>().HasQueryFilter(x => !x.IsDeleted);
+            modelBuilder.Entity<Payment>().HasQueryFilter(x => !x.IsDeleted);
+
+            #endregion
+
+            #region Relationships
+
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Role)
+                .WithMany()
+                .HasForeignKey(u => u.RoleId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Gym>()
+                .HasOne(g => g.GymOwner)
+                .WithMany()
+                .HasForeignKey(g => g.GymOwnerId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<SubscriptionPlan>()
+                .HasOne(sp => sp.Gym)
+                .WithMany()
+                .HasForeignKey(sp => sp.GymId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<MemberSubscription>()
+                .HasOne(ms => ms.Member)
+                .WithMany()
+                .HasForeignKey(ms => ms.MemberId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<MemberSubscription>()
+                .HasOne(ms => ms.Gym)
+                .WithMany()
+                .HasForeignKey(ms => ms.GymId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<MemberSubscription>()
+                .HasOne(ms => ms.SubscriptionPlan)
+                .WithMany()
+                .HasForeignKey(ms => ms.SubscriptionPlanId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Payment>()
+                .HasOne(p => p.MemberSubscription)
+                .WithMany()
+                .HasForeignKey(p => p.MemberSubscriptionId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            #endregion
         }
 
-        
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            ApplyAuditInfo();
-            return base.SaveChangesAsync(cancellationToken);
-        }
-
-       
         public override int SaveChanges()
         {
-            ApplyAuditInfo();
+            ApplyAuditInformation();
             return base.SaveChanges();
         }
 
-
-        private void ApplyAuditInfo()
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            
+            ApplyAuditInformation();
+            return base.SaveChangesAsync(cancellationToken);
+        }
+
+        private void ApplyAuditInformation()
+        {
             var entries = ChangeTracker
-                .Entries()
-                .Where(e => e.Entity is BaseEntity &&
-                      (e.State == EntityState.Added || e.State == EntityState.Modified || e.State == EntityState.Deleted))
-                .ToList(); 
+                .Entries<BaseEntity>()
+                .Where(e =>
+                    e.State == EntityState.Added ||
+                    e.State == EntityState.Modified ||
+                    e.State == EntityState.Deleted)
+                .ToList();
+
+            var currentUser = "System";
+            var utcNow = DateTime.UtcNow;
 
             foreach (var entry in entries)
             {
-                var entity = (BaseEntity)entry.Entity;
-                string currentSystemUser = "System";
+                switch (entry.State)
+                {
+                    case EntityState.Added:
 
-                if (entry.State == EntityState.Added)
-                {
-                    entity.CreatedOn = DateTime.UtcNow;
-                    entity.CreatedBy = currentSystemUser;
-                }
-                else if (entry.State == EntityState.Modified)
-                {
-                    entity.ModifiedOn = DateTime.UtcNow;
-                    entity.ModifiedBy = currentSystemUser;
-                }
-                else if (entry.State == EntityState.Deleted)
-                {
-                    
-                    entry.State = EntityState.Modified;
-                    entity.IsDeleted = true;
-                    entity.DeletedOn = DateTime.UtcNow;
-                    entity.DeletedBy = currentSystemUser;
+                        entry.Entity.CreatedOn = utcNow;
+                        entry.Entity.CreatedBy = currentUser;
+
+                        entry.Entity.IsDeleted = false;
+                        entry.Entity.ModifiedOn = null;
+                        entry.Entity.ModifiedBy = null;
+                        entry.Entity.DeletedOn = null;
+                        entry.Entity.DeletedBy = null;
+
+                        break;
+
+                    case EntityState.Modified:
+
+                       
+                        entry.Property(e => e.CreatedOn).IsModified = false;
+                        entry.Property(e => e.CreatedBy).IsModified = false;
+
+                        entry.Entity.ModifiedOn = utcNow;
+                        entry.Entity.ModifiedBy = currentUser;
+
+                        break;
+
+                    case EntityState.Deleted:
+
+                       
+                        entry.State = EntityState.Modified;
+
+                        entry.Property(e => e.CreatedOn).IsModified = false;
+                        entry.Property(e => e.CreatedBy).IsModified = false;
+
+                        entry.Entity.IsDeleted = true;
+                        entry.Entity.DeletedOn = utcNow;
+                        entry.Entity.DeletedBy = currentUser;
+
+                        break;
                 }
             }
         }

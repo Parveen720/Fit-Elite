@@ -7,10 +7,6 @@ namespace Fit_Elite.Domain.Entities
 {
     public class Payment : BaseEntity
     {
-        [Key]
-        public long Id { get; set; }
-
-        [ForeignKey(nameof(MemberSubscription))]
         public long MemberSubscriptionId { get; set; }
         public MemberSubscription MemberSubscription { get; set; } = null!;
 

@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace Fit_Elite.Application.DTOs
 {
-    internal class LoginRequestDto
+    public class LoginRequestDto
     {
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = null!;
+
+        [Required]
+        public string Password { get; set; } = null!;
     }
 }
