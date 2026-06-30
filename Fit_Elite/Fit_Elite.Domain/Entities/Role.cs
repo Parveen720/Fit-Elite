@@ -9,5 +9,7 @@ namespace Fit_Elite.Domain.Entities
         [StringLength(50)]
         public string Name { get; set; } = string.Empty;
 
+        public UserRole? UserRole { get; set; }
+
     }
 }

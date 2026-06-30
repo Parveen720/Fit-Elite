@@ -47,5 +47,7 @@ namespace Fit_Elite.Domain.Entities
         public DateTimeOffset CreatedOn { get; set; } = DateTimeOffset.UtcNow;
 
         public DateTimeOffset? ModifiedOn { get; set; }
+
+        public UserRole? UserRole { get; set; }
     }
 }

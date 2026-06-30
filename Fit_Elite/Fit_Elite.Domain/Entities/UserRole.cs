@@ -1,8 +1,10 @@
-﻿using Fit_Elite.Domain.Common;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Fit_Elite.Domain.Entities
 {
-    public class UserRole : EntityBase
+    public class UserRole
     {
         public long UserId { get; set; }
         public User User { get; set; } = null!;
