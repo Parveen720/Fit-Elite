@@ -1,24 +1,35 @@
-﻿using Fit_Elite.Domain.Enums;
+﻿using Fit_Elite.Domain.Common;
+using Fit_Elite.Domain.Enums;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Fit_Elite.Domain.Entities
 {
-    public class MemberSubscription : BaseEntity
+    public class MemberSubscription : EntityBase
     {
-        public long MemberId { get; set; }
+        // Member
+        public long UserId { get; set; }
+        public User User { get; set; } = null!;
 
-        public User Member { get; set; } = null!;
-
-        public long GymId { get; set; }
-        public Gym Gym { get; set; } = null!;
+       
+        // Selected Plan
         public long SubscriptionPlanId { get; set; }
         public SubscriptionPlan SubscriptionPlan { get; set; } = null!;
 
-        public DateTime StartDate { get; set; }
+        public DateTimeOffset StartDate { get; set; }
 
-        public DateTime EndDate { get; set; }
+        public DateTimeOffset EndDate { get; set; }
+
         public int RemainingDays { get; set; }
 
         public SubscriptionStatus Status { get; set; }
 
+        public bool IsActive { get; set; } = true;
+
+        public bool IsDeleted { get; set; } = false;
+
+        public DateTimeOffset CreatedOn { get; set; } = DateTimeOffset.UtcNow;
+
+        public DateTimeOffset? ModifiedOn { get; set; }
     }
 }

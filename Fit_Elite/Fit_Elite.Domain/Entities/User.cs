@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Fit_Elite.Domain.Common;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Fit_Elite.Domain.Entities
 {
-    public class User : BaseEntity
+    public class User : EntityBase
     {
-
         [Required]
         [StringLength(100)]
         public string FullName { get; set; } = string.Empty;
@@ -21,10 +22,32 @@ namespace Fit_Elite.Domain.Entities
         [StringLength(255)]
         public string PasswordHash { get; set; } = string.Empty;
 
-        public long RoleId { get; set; }
+        [StringLength(200)]
+        public string? AddressLine1 { get; set; }
 
-        public Role Role { get; set; } = null!;
+        [StringLength(200)]
+        public string? AddressLine2 { get; set; }
+
+        [StringLength(100)]
+        public string? City { get; set; }
+
+        [StringLength(100)]
+        public string? State { get; set; }
+
+        [StringLength(100)]
+        public string? Country { get; set; }
+
+        [StringLength(10)]
+        public string? PostalCode { get; set; }
 
         public bool IsActive { get; set; } = true;
+
+        public bool IsDeleted { get; set; } = false;
+
+        public DateTimeOffset CreatedOn { get; set; } = DateTimeOffset.UtcNow;
+
+        public DateTimeOffset? ModifiedOn { get; set; }
+
+        public UserRole? UserRole { get; set; }
     }
 }
