@@ -8,13 +8,10 @@ namespace Fit_Elite.Domain.Entities
     public class MemberSubscription : EntityBase
     {
         // Member
-        public long MemberId { get; set; }
-        public User Member { get; set; } = null!;
+        public long UserId { get; set; }
+        public User User { get; set; } = null!;
 
-        // Gym
-        public long GymId { get; set; }
-        public Gym Gym { get; set; } = null!;
-
+       
         // Selected Plan
         public long SubscriptionPlanId { get; set; }
         public SubscriptionPlan SubscriptionPlan { get; set; } = null!;

@@ -9,8 +9,8 @@ namespace Fit_Elite.Domain.Entities
     public class Payment : EntityBase
     {
         // Subscription for which payment is made
-        public long MemberSubscriptionId { get; set; }
-        public MemberSubscription MemberSubscription { get; set; } = null!;
+        public long UserId { get; set; }
+        public User User { get; set; } = null!;
 
         [Required]
         [Column(TypeName = "decimal(10,2)")]
