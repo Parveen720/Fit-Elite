@@ -20,8 +20,6 @@ namespace Fit_Elite.Domain.Entities
 
         public DateTimeOffset EndDate { get; set; }
 
-        public int RemainingDays { get; set; }
-
         public SubscriptionStatus Status { get; set; }
 
         public bool IsActive { get; set; } = true;

@@ -10,6 +10,5 @@ namespace Fit_Elite.Domain.Entities
         public string Name { get; set; } = string.Empty;
 
         public UserRole? UserRole { get; set; }
-
     }
 }

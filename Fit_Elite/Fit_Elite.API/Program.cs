@@ -1,23 +1,23 @@
 using Fit_Elite.Application.Interfaces;
-using Fit_Elite.Application.Services;
-using Fit_Elite.Infrastructure.Data;
-using Fit_Elite.Infrastructure.Repositories;
+//using Fit_Elite.Application.Services;
+//using Fit_Elite.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models; 
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Fit_Elite.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IAuthService, AuthService>();
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
+//builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
