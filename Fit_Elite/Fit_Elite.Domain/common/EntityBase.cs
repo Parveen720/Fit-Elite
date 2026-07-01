@@ -6,5 +6,6 @@ namespace Fit_Elite.Domain.Common
 {
     public abstract class EntityBase : EntityBaseWithTypedId<long>
     {
+
     }
 }

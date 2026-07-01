@@ -59,7 +59,6 @@ namespace Fit_Elite.Domain.Entities
 
         // Owner of the Gym
         public long GymOwnerId { get; set; }
-
         public User GymOwner { get; set; } = null!;
     }
 }

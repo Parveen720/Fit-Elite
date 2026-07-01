@@ -1,7 +1,7 @@
 ﻿using Fit_Elite.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Fit_Elite.Infrastructure.Data
+namespace Fit_Elite.Data
 {
     public class ApplicationDbContext : DbContext
     {
@@ -10,154 +10,84 @@ namespace Fit_Elite.Infrastructure.Data
         {
         }
 
-        #region DbSets
-
         public DbSet<User> Users => Set<User>();
         public DbSet<Role> Roles => Set<Role>();
+        public DbSet<UserRole> UserRoles => Set<UserRole>();
         public DbSet<Gym> Gyms => Set<Gym>();
         public DbSet<SubscriptionPlan> SubscriptionPlans => Set<SubscriptionPlan>();
         public DbSet<MemberSubscription> MemberSubscriptions => Set<MemberSubscription>();
         public DbSet<Payment> Payments => Set<Payment>();
 
-        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            #region Global Query Filters
+           
+            // USER_ROLE (One User -> One Role)
+     
 
-            modelBuilder.Entity<User>().HasQueryFilter(x => !x.IsDeleted);
-            modelBuilder.Entity<Role>().HasQueryFilter(x => !x.IsDeleted);
-            modelBuilder.Entity<Gym>().HasQueryFilter(x => !x.IsDeleted);
-            modelBuilder.Entity<SubscriptionPlan>().HasQueryFilter(x => !x.IsDeleted);
-            modelBuilder.Entity<MemberSubscription>().HasQueryFilter(x => !x.IsDeleted);
-            modelBuilder.Entity<Payment>().HasQueryFilter(x => !x.IsDeleted);
+            modelBuilder.Entity<UserRole>()
+                .HasKey(x => new { x.UserId, x.RoleId });
 
-            #endregion
+            modelBuilder.Entity<UserRole>()
+                .HasOne(x => x.User)
+                .WithOne(x => x.UserRole)
+                .HasForeignKey<UserRole>(x => x.UserId);
 
-            #region Relationships
-
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.Role)
+            modelBuilder.Entity<UserRole>()
+                .HasOne(x => x.Role)
                 .WithMany()
-                .HasForeignKey(u => u.RoleId)
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(x => x.RoleId);
+
+            // GYM (One Gym -> One Owner)
+         
 
             modelBuilder.Entity<Gym>()
-                .HasOne(g => g.GymOwner)
-                .WithMany()
-                .HasForeignKey(g => g.GymOwnerId)
-                .IsRequired()
+                .HasOne(x => x.GymOwner)
+                .WithOne()
+                .HasForeignKey<Gym>(x => x.GymOwnerId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+        
+            // GYM -> SUBSCRIPTION PLAN
+          
 
             modelBuilder.Entity<SubscriptionPlan>()
-                .HasOne(sp => sp.Gym)
+                .HasOne(x => x.Gym)
                 .WithMany()
-                .HasForeignKey(sp => sp.GymId)
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(x => x.GymId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            
+            // USER -> MEMBER SUBSCRIPTION
+            
 
             modelBuilder.Entity<MemberSubscription>()
-                .HasOne(ms => ms.Member)
+                .HasOne(x => x.User)
                 .WithMany()
-                .HasForeignKey(ms => ms.MemberId)
-                .IsRequired()
+                .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<MemberSubscription>()
-                .HasOne(ms => ms.Gym)
-                .WithMany()
-                .HasForeignKey(ms => ms.GymId)
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Restrict);
+           
+            // PLAN -> MEMBER SUBSCRIPTION
+          
 
             modelBuilder.Entity<MemberSubscription>()
-                .HasOne(ms => ms.SubscriptionPlan)
+                .HasOne(x => x.SubscriptionPlan)
                 .WithMany()
-                .HasForeignKey(ms => ms.SubscriptionPlanId)
-                .IsRequired()
+                .HasForeignKey(x => x.SubscriptionPlanId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            
+            // USER -> PAYMENT
+          
 
             modelBuilder.Entity<Payment>()
-                .HasOne(p => p.MemberSubscription)
+                .HasOne(x => x.User)
                 .WithMany()
-                .HasForeignKey(p => p.MemberSubscriptionId)
-                .IsRequired()
+                .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            #endregion
-        }
-
-        public override int SaveChanges()
-        {
-            ApplyAuditInformation();
-            return base.SaveChanges();
-        }
-
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            ApplyAuditInformation();
-            return base.SaveChangesAsync(cancellationToken);
-        }
-
-        private void ApplyAuditInformation()
-        {
-            var entries = ChangeTracker
-                .Entries<BaseEntity>()
-                .Where(e =>
-                    e.State == EntityState.Added ||
-                    e.State == EntityState.Modified ||
-                    e.State == EntityState.Deleted)
-                .ToList();
-
-            var currentUser = "System";
-            var utcNow = DateTime.UtcNow;
-
-            foreach (var entry in entries)
-            {
-                switch (entry.State)
-                {
-                    case EntityState.Added:
-
-                        entry.Entity.CreatedOn = utcNow;
-                        entry.Entity.CreatedBy = currentUser;
-
-                        entry.Entity.IsDeleted = false;
-                        entry.Entity.ModifiedOn = null;
-                        entry.Entity.ModifiedBy = null;
-                        entry.Entity.DeletedOn = null;
-                        entry.Entity.DeletedBy = null;
-
-                        break;
-
-                    case EntityState.Modified:
-
-                       
-                        entry.Property(e => e.CreatedOn).IsModified = false;
-                        entry.Property(e => e.CreatedBy).IsModified = false;
-
-                        entry.Entity.ModifiedOn = utcNow;
-                        entry.Entity.ModifiedBy = currentUser;
-
-                        break;
-
-                    case EntityState.Deleted:
-
-                       
-                        entry.State = EntityState.Modified;
-
-                        entry.Property(e => e.CreatedOn).IsModified = false;
-                        entry.Property(e => e.CreatedBy).IsModified = false;
-
-                        entry.Entity.IsDeleted = true;
-                        entry.Entity.DeletedOn = utcNow;
-                        entry.Entity.DeletedBy = currentUser;
-
-                        break;
-                }
-            }
         }
     }
 }
