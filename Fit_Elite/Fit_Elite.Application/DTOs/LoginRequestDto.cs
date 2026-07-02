@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-
+﻿using Fit_Elite.Domain.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Fit_Elite.Application.DTOs
 {
@@ -11,5 +11,7 @@ namespace Fit_Elite.Application.DTOs
 
         [Required]
         public string Password { get; set; } = null!;
+
+        public EnumRole LoginAs { get; set; }
     }
 }

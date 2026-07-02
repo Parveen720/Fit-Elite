@@ -10,10 +10,24 @@ namespace Fit_Elite.Data
     {
         public static async Task SeedAdminAsync(ApplicationDbContext context, IConfiguration config)
         {
+            var roles = new[] { "Admin", "Member", "GymOwner" };
+
+            foreach (var roleName in roles)
+            {
+                if (!await context.Roles.IgnoreQueryFilters().AnyAsync(r => r.Name == roleName))
+                {
+                    context.Roles.Add(new Role
+                    {
+                        Name = roleName
+                    });
+                }
+            }
+
+            await context.SaveChangesAsync();
 
             var adminRole = await context.Roles
                 .IgnoreQueryFilters()
-                .FirstOrDefaultAsync(r => r.Name == "Admin");
+                .FirstAsync(r => r.Name == "Admin");
 
             if (adminRole == null)
             {

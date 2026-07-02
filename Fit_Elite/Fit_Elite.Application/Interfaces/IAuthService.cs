@@ -4,7 +4,7 @@ namespace Fit_Elite.Application.Interfaces
 {
     public interface IAuthService
     {
-        Task<AuthResponseDto> RegisterAsync(RegisterRequestDto registerDto);
-        Task<AuthResponseDto> LoginAsync(LoginRequestDto loginDto);
+        Task<RegisterResponseDto> RegisterAsync(RegisterRequestDto registerDto);
+        Task<LoginResponseDto> LoginAsync(LoginRequestDto loginDto);
     }
 }
