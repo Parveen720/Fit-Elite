@@ -12,7 +12,9 @@ namespace Fit_Elite.API.Middleware
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionHandlingMiddleware> _logger;
 
-        public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
+        public ExceptionHandlingMiddleware(
+            RequestDelegate next,
+            ILogger<ExceptionHandlingMiddleware> logger)
         {
             _next = next;
             _logger = logger;
@@ -22,13 +24,17 @@ namespace Fit_Elite.API.Middleware
         {
             try
             {
-                
                 await _next(context);
             }
             catch (Exception ex)
             {
-                
-                _logger.LogError(ex, "An unhandled exception occurred: {Message}", ex.Message);
+                _logger.LogError(
+                    ex,
+                    "Unhandled exception while processing {Method} {Path}. Error: {Message}",
+                    context.Request.Method,
+                    context.Request.Path,
+                    ex.Message);
+
                 await HandleExceptionAsync(context, ex);
             }
         }
@@ -37,11 +43,9 @@ namespace Fit_Elite.API.Middleware
         {
             context.Response.ContentType = "application/json";
 
-          
             int statusCode = StatusCodes.Status500InternalServerError;
             string message = "An unexpected error occurred on the server.";
 
-           
             switch (exception)
             {
                 case BadRequestException badRequestEx:
@@ -57,7 +61,6 @@ namespace Fit_Elite.API.Middleware
 
             context.Response.StatusCode = statusCode;
 
-            // Ek standard error format banao jo hamesha same rahega
             var response = new
             {
                 Status = statusCode,
@@ -66,6 +69,7 @@ namespace Fit_Elite.API.Middleware
             };
 
             var jsonResponse = JsonSerializer.Serialize(response);
+
             return context.Response.WriteAsync(jsonResponse);
         }
     }
