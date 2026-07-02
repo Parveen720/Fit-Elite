@@ -27,3 +27,6 @@ Desktop.ini
 ## .NET Core / ASP.NET Core Secrets & Local Settings
 appsettings.Development.json
 UserSecrets/
+appsettings.json
+appsettings.Production.json
+appsettings.Local.json
