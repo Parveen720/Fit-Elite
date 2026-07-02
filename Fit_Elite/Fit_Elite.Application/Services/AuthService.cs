@@ -1,121 +1,163 @@
-﻿//using Fit_Elite.Application.DTOs;
-//using Fit_Elite.Application.Interfaces;
-//using Fit_Elite.Domain.Entities;
-//using Microsoft.Extensions.Configuration;
-//using Microsoft.IdentityModel.Tokens;
-//using System.IdentityModel.Tokens.Jwt;
-//using System.Security.Claims;
-//using System.Text;
-//using BCryptNet = BCrypt.Net.BCrypt;
+﻿using Fit_Elite.Application.DTOs;
+using Fit_Elite.Application.Exceptions;
+using Fit_Elite.Application.Interfaces;
+using Fit_Elite.Domain.Entities;
+using Fit_Elite.Domain.Enums;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
+using BCryptNet = BCrypt.Net.BCrypt;
 
-//namespace Fit_Elite.Application.Services
-//{
-//    public class AuthService : IAuthService
-//    {
-//        private readonly IUserRepository _userRepository;
-//        private readonly IConfiguration _configuration; 
+namespace Fit_Elite.Application.Services
+{
+    public class AuthService : IAuthService
+    {
+        
+        private readonly iGenericRepository<User> _userRepository;
+        private readonly iGenericRepository<Role> _roleRepository;
+        private readonly IConfiguration _configuration;
 
-//        public AuthService(IUserRepository userRepository, IConfiguration configuration)
-//        {
-//            _userRepository = userRepository;
-//            _configuration = configuration;
-//        }
+        
+        private static readonly EnumRole[] AllowedSelfRegisterRoles = {
+            EnumRole.Member,
+            EnumRole.GymOwner
+        };
 
-//        public async Task<AuthResponseDto> RegisterAsync(RegisterRequestDto registerDto)
-//        {
-//            if (await _userRepository.EmailExistsAsync(registerDto.Email))
-//            {
-//                return new AuthResponseDto { IsSuccess = false, Message = "This email is already registered!" };
-//            }
+        public AuthService(
+            iGenericRepository<User> userRepository,
+            iGenericRepository<Role> roleRepository,
+            IConfiguration configuration)
+        {
+            _userRepository = userRepository;
+            _roleRepository = roleRepository;
+            _configuration = configuration;
+        }
 
-//            var role = await _userRepository.GetRoleByNameAsync(registerDto.Role);
-//            if (role == null)
-//            {
-//                return new AuthResponseDto { IsSuccess = false, Message = $"Role '{registerDto.Role}' does not exist!" };
-//            }
+        public async Task<AuthResponseDto> RegisterAsync(RegisterRequestDto registerDto)
+        {
+            
+            if (!AllowedSelfRegisterRoles.Contains(registerDto.Role))
+            {
+                throw new BadRequestException(
+                    $"Invalid role '{registerDto.Role}'. Allowed roles: {string.Join(", ", AllowedSelfRegisterRoles)}."
+                );
+            }
 
-//            string hashedPassword = BCryptNet.HashPassword(registerDto.Password);
+         
+            string cleanEmail = registerDto.Email.Trim().ToLower();
+            if (await _userRepository.ExistsAsync(u => u.Email.ToLower() == cleanEmail))
+            {
+                throw new BadRequestException("This email is already registered!");
+            }
 
-//            var newUser = new User
-//            {
-//                FullName = registerDto.FullName,
-//                Email = registerDto.Email,
-//                PasswordHash = hashedPassword,
-//                RoleId = role.Id,
-//                Role = role,
-//                IsActive = true
-//            };
+            string targetRoleName = registerDto.Role.ToString();
+            var role = await _roleRepository.FindSingleAsync(r => r.Name.ToLower() == targetRoleName.ToLower());
+            if (role == null)
+            {
+                throw new BadRequestException($"Role '{targetRoleName}' does not exist in the database!");
+            }
 
-//            await _userRepository.AddAsync(newUser);
-//            await _userRepository.SaveChangesAsync();
+            string hashedPassword = BCryptNet.HashPassword(registerDto.Password);
+
+            var newUser = new User
+            {
+                FullName = registerDto.FullName,
+                Email = cleanEmail,
+                PasswordHash = hashedPassword,
+                PhoneNumber = registerDto.PhoneNumber
+            };
+
+            newUser.UserRole = new UserRole
+            {
+                User = newUser,
+                RoleId = role.Id
+            };
 
            
-//            var token = GenerateJwtToken(newUser);
+            await _userRepository.AddAsync(newUser);
+            await _userRepository.SaveAsync();
 
-//            return new AuthResponseDto
-//            {
-//                IsSuccess = true,
-//                Message = "Registration successful!",
-//                Token = token,
-//                FullName = newUser.FullName,
-//                Role = role.Name
-//            };
-//        }
+            var token = GenerateJwtToken(newUser, role.Name);
 
-//        public async Task<AuthResponseDto> LoginAsync(LoginRequestDto loginDto)
-//        {
-//            var user = await _userRepository.GetByEmailAsync(loginDto.Email);
-//            if (user == null)
-//            {
-//                return new AuthResponseDto { IsSuccess = false, Message = "Invalid Email or Password!" };
-//            }
+            return new AuthResponseDto
+            {
+                Token = token,
+                UserId = newUser.Id,
+                Email = newUser.Email,
+                FullName = newUser.FullName,
+                Role = role.Name
+            };
+        }
 
-//            bool isPasswordValid = BCryptNet.Verify(loginDto.Password, user.PasswordHash);
-//            if (!isPasswordValid)
-//            {
-//                return new AuthResponseDto { IsSuccess = false, Message = "Invalid Email or Password!" };
-//            }
-
-           
-//            var token = GenerateJwtToken(user);
-
-//            return new AuthResponseDto
-//            {
-//                IsSuccess = true,
-//                Message = "Login successful!",
-//                Token = token,
-//                FullName = user.FullName,
-//                Role = user.Role?.Name ?? "No Role"
-//            };
-//        }
-
-       
-//        private string GenerateJwtToken(User user)
-//        {
+        public async Task<AuthResponseDto> LoginAsync(LoginRequestDto loginDto)
+        {
             
-//            var claims = new[]
-//            {
-//                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-//                new Claim(ClaimTypes.Email, user.Email),
-//                new Claim(ClaimTypes.Name, user.FullName),
-//                new Claim(ClaimTypes.Role, user.Role?.Name ?? "Member") 
-//            };
+            string cleanEmail = loginDto.Email.Trim().ToLower();
+            var user = await _userRepository.FindSingleAsync(
+                u => u.Email.ToLower() == cleanEmail,
+                u => u.UserRole,            
+                u => u.UserRole.Role         
+            );
 
-            
-//            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));
-//            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            if (user == null)
+            {
+                throw new UnauthorizedException("Invalid Email or Password!");
+            }
 
-           
-//            var token = new JwtSecurityToken(
-//                issuer: _configuration["Jwt:Issuer"],
-//                audience: _configuration["Jwt:Audience"],
-//                claims: claims,
-//                expires: DateTime.UtcNow.AddMinutes(Convert.ToDouble(_configuration["Jwt:DurationInMinutes"])),
-//                signingCredentials: creds
-//            );
+            bool isPasswordValid = BCryptNet.Verify(loginDto.Password, user.PasswordHash);
+            if (!isPasswordValid)
+            {
+                throw new UnauthorizedException("Invalid Email or Password!");
+            }
 
-            
-//            return new JwtSecurityTokenHandler().WriteToken(token);
-//        }
-//    }
-//}
+            string roleName = user.UserRole?.Role?.Name ?? "Member";
+
+            var token = GenerateJwtToken(user, roleName);
+
+            return new AuthResponseDto
+            {
+                Token = token,
+                UserId = user.Id,
+                Email = user.Email,
+                FullName = user.FullName,
+                Role = roleName
+            };
+        }
+
+        private string GenerateJwtToken(User user, string roleName)
+        {
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Name, user.FullName),
+                new Claim(ClaimTypes.Role, roleName)
+            };
+
+            var jwtKey = _configuration["Jwt:Key"]
+                ?? throw new InvalidOperationException("JWT Signing Key is missing in configuration.");
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var durationMinutes = double.TryParse(_configuration["Jwt:DurationInMinutes"], out var parsedMinutes)
+                ? parsedMinutes
+                : 60;
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddMinutes(durationMinutes),
+                signingCredentials: creds
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+    }
+}

@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Fit_Elite.Domain.Common;
+﻿using Fit_Elite.Domain.common;
+using System.ComponentModel.DataAnnotations;
 
 namespace Fit_Elite.Domain.Entities
 {
@@ -9,6 +9,6 @@ namespace Fit_Elite.Domain.Entities
         [StringLength(50)]
         public string Name { get; set; } = string.Empty;
 
-        public UserRole? UserRole { get; set; }
+       public ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
     }
 }
