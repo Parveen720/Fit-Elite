@@ -1,11 +1,11 @@
-﻿using Fit_Elite.Domain.Common;
+﻿using Fit_Elite.Domain.common;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Fit_Elite.Domain.Entities
 {
-    public class SubscriptionPlan : EntityBase
+    public class SubscriptionPlan : AuditableEntity
     {
         public long GymId { get; set; }
 
@@ -27,10 +27,5 @@ namespace Fit_Elite.Domain.Entities
 
         public bool IsActive { get; set; } = true;
 
-        public bool IsDeleted { get; set; } = false;
-
-        public DateTimeOffset CreatedOn { get; set; } = DateTimeOffset.UtcNow;
-
-        public DateTimeOffset? ModifiedOn { get; set; }
     }
 }

@@ -1,10 +1,10 @@
-﻿using Fit_Elite.Domain.Common;
+﻿using Fit_Elite.Domain.common;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Fit_Elite.Domain.Entities
 {
-    public class Gym : EntityBase
+    public class Gym : AuditableEntity
     {
 
         [Required]
@@ -51,11 +51,6 @@ namespace Fit_Elite.Domain.Entities
 
         public bool IsActive { get; set; } = true;
 
-        public bool IsDeleted { get; set; } = false;
-
-        public DateTimeOffset CreatedOn { get; set; } = DateTimeOffset.UtcNow;
-
-        public DateTimeOffset? ModifiedOn { get; set; }
 
         // Owner of the Gym
         public long GymOwnerId { get; set; }

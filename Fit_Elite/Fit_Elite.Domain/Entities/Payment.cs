@@ -1,4 +1,4 @@
-﻿using Fit_Elite.Domain.Common;
+﻿using Fit_Elite.Domain.common;
 using Fit_Elite.Domain.Enums;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -6,11 +6,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Fit_Elite.Domain.Entities
 {
-    public class Payment : EntityBase
+    public class Payment : AuditableEntity
     {
-        // Subscription for which payment is made
+       
         public long UserId { get; set; }
         public User User { get; set; } = null!;
+
+        public long SubscriptionPlanId { get; set; }
+        public SubscriptionPlan SubscriptionPlan { get; set; } = null!;
 
         [Required]
         [Column(TypeName = "decimal(10,2)")]
@@ -31,10 +34,5 @@ namespace Fit_Elite.Domain.Entities
 
         public DateTimeOffset PaymentDate { get; set; } = DateTimeOffset.UtcNow;
 
-        public bool IsDeleted { get; set; } = false;
-
-        public DateTimeOffset CreatedOn { get; set; } = DateTimeOffset.UtcNow;
-
-        public DateTimeOffset? ModifiedOn { get; set; }
     }
 }
